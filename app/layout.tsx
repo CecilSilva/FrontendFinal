@@ -52,12 +52,12 @@ export default function RootLayout({
           
           
           <Link href="/backtesting" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Backtesting</Link>
-          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">About Us</Link>
-          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Trading Hub</Link>
-          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Strategies</Link>
-          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Contact</Link>
+          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Benchmark</Link>
+          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Trading Lab</Link>
+          <Link href="/aboutUs" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">About Us</Link>
+          <Link href="/contact" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Contact</Link>
           
-          <a href="URL" className="bg-cyan-500 border border-white text-white font-bold px-3 py-2 rounded-lg ml-40 hover:bg-cyan-600 hover:text-gray-900 transition-all duration-200">Log In  |  Sign Up</a>
+          <a href="URL" className="bg-cyan-500 border border-white text-white font-bold px-3 py-2 rounded-lg ml-40 hover:bg-green-400 hover:text-gray-900 transition-all duration-200">Log In  |  Sign Up</a>
 
         </nav>
       </header>
