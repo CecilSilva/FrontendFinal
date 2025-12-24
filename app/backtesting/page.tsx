@@ -98,10 +98,19 @@ export default function BacktestingPage() {
 
   // Handle stock upload constant is A.I.
   const handleStockUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const file = e.target.files?.[0];if (!file) return;const reader = new FileReader();reader.onload = (event) => {const text = event.target.result?.toString();
-    if (!text) return;
-    // Split by newlines or commas
-    const symbols = text.replace(/\r/g, "").split(/[\n,]+/).map((s) => s.trim().toUpperCase()).filter(Boolean);
+  const file = e.target.files?.[0];if (!file) return;const reader = new FileReader();reader.onload = (event) => {
+  const target = event?.target;
+  if (!target || typeof target.result !== "string") return;
+
+  const text = target.result;
+
+  const symbols = text.replace(/\r/g, "")
+    .split(/[\n,]+/)
+    .map((s) => s.trim().toUpperCase())
+    .filter(Boolean);
+
+  // you can continue your logic here with "symbols"
+};
     // Add to stockBasket (avoid duplicates)
       setStockBasket((prev) => {const existing = new Set(prev.map((s) => s.id));const newStocks = symbols.filter((s) => !existing.has(s)).map((s) => ({
           id: s,name: s,description: "Uploaded stock",}));return [...prev, ...newStocks];});};reader.readAsText(file);};
