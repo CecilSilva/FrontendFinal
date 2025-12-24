@@ -12,13 +12,11 @@ export default function Home(){
       <main className="flex flex-col items-center justify-center text-center py-10 bg-gray-800 dark:bg-gray-900">
         
         {/* Graphic */}
-        <Image
-          src="/images/stock-image-cartoon.png"
-          alt="Trading Graphic"
-          width={1400}  // adjust size
-          height={300} // adjust size
-          className="mb-7 transition-transform duration-300 hover:scale-110 hover:opacity-70"
-        />
+        <img
+  src="/images/stock-image-cartoon.png"
+  alt="Trading Graphic"
+  className="scale-80 mb-7 transition-transform duration-300 hover:scale-90 hover:opacity-70"
+/>
         <h1 className="text-5xl font-bold mb-6 text-white dark:text-white">Welcome To The Haven Project</h1>
         <p className = "text-lg text-white dark:text-gray-300 max-w-xxl mb-8">Your all-in-one platform for trading | backtesting and AI-powered strategies.</p>
         <a href = "/backtesting" className = "px-6 py-3 bg-cyan-500 text-white font-bold rounded-lg hover:bg-green-400 transition-colors duration-200">Backtest Today </a>
