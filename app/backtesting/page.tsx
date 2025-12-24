@@ -98,22 +98,37 @@ export default function BacktestingPage() {
 
   // Handle stock upload constant is A.I.
   const handleStockUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const file = e.target.files?.[0];if (!file) return;const reader = new FileReader();reader.onload = (event) => {
-  const target = event?.target;
-  if (!target || typeof target.result !== "string") return;
+  const file = e.target.files?.[0];
+  if (!file) return;
 
-  const text = target.result;
+  const reader = new FileReader();
 
-  const symbols = text.replace(/\r/g, "")
-    .split(/[\n,]+/)
-    .map((s) => s.trim().toUpperCase())
-    .filter(Boolean);
+  reader.onload = (event) => {
+    const target = event?.target;
+    if (!target || typeof target.result !== "string") return;
 
-  // you can continue your logic here with "symbols"
+    const text = target.result;
+
+    // Split by newlines or commas and convert to uppercase
+    const symbols = text
+      .replace(/\r/g, "")
+      .split(/[\n,]+/)
+      .map((s) => s.trim().toUpperCase())
+      .filter(Boolean);
+
+    // Map symbols to stock objects
+    const newStocks = symbols.map((s) => ({
+      id: s,
+      name: s,
+      description: "Uploaded stock",
+    }));
+
+    // Update basket state
+    setBasket((prev) => [...prev, ...newStocks]);
+  };
+
+  reader.readAsText(file);
 };
-    // Add to stockBasket (avoid duplicates)
-      setStockBasket((prev) => {const existing = new Set(prev.map((s) => s.id));const newStocks = symbols.filter((s) => !existing.has(s)).map((s) => ({
-          id: s,name: s,description: "Uploaded stock",}));return [...prev, ...newStocks];});};reader.readAsText(file);};
 
   return (
 
