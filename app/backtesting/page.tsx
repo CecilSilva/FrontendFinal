@@ -41,7 +41,7 @@ export default function BacktestingPage() {
   const payload = buildSimulationPayload();
 
   const json = JSON.stringify(payload, null, 2); // pretty-print
-  const blob = new Blob([json], { type: "application/json" });
+  const blob = new Blob([json], { type: "http://74.208.97.235:8000/run" });
   const url = URL.createObjectURL(blob);
 
   const a = document.createElement("a");
@@ -76,7 +76,7 @@ export default function BacktestingPage() {
 
   console.log("Sending simulation payload:", payload);
   try {
-    const res = await fetch("/api/run-simulation", {
+    const res = await fetch("http://74.208.97.235:8000/run", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
