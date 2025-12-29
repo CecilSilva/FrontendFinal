@@ -542,7 +542,6 @@ export default function BacktestingPage() {
     onClick={runSimulation}
     className="text-l py-3 px-8 border-6 border-cyan-700 bg-cyan-500 rounded-2xl text-white font-bold 
     hover:bg-green-400 transition hover:border-green-600"style={{ fontFamily: "Ethnocentric, sans-serif" }}> Run Simulation
-    
     </button>
   </div>
 

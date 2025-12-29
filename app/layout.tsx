@@ -53,7 +53,7 @@ export default function RootLayout({
           
           <Link href="/backtesting" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Backtesting</Link>
           <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Benchmark</Link>
-          <Link href="URL" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Trading Lab</Link>
+          <Link href="trading-lab" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Trading Lab</Link>
           <Link href="/aboutUs" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">About Us</Link>
           <Link href="/contact" className="text-white font-bold px-3 py-1 hover:border-b-2 hover:border-cyan-400">Contact</Link>
           
